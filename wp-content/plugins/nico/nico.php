@@ -20,29 +20,29 @@ require_once(plugin_dir_path(__FILE__) . 'FDG_menus.php'); // Pour les fonctions
 
 
 
-register_activation_hook(__FILE__, 'mon_plugin_activation');
+// register_activation_hook(__FILE__, 'mon_plugin_activation');
 
-register_deactivation_hook(__FILE__, 'mon_plugin_desactivation');
+// register_deactivation_hook(__FILE__, 'mon_plugin_desactivation');
 
-function mon_plugin_activation() {
-    global $wpdb; 
+// function mon_plugin_activation() {
+//     global $wpdb; 
 
-    $table_name = $wpdb->prefix . 'test'; 
-    $sql = "CREATE TABLE IF NOT EXISTS $table_name (
-        id INT(11) NOT NULL AUTO_INCREMENT,
-        column1 VARCHAR(100) NOT NULL,
-        column2 INT(11) NOT NULL,
-        PRIMARY KEY (id)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci";
+//     $table_name = $wpdb->prefix . 'clubs'; 
+//     $sql = "CREATE TABLE IF NOT EXISTS $table_name (
+//         id INT(11) NOT NULL AUTO_INCREMENT,
+//         column1 VARCHAR(100) NOT NULL,
+//         column2 INT(11) NOT NULL,
+//         PRIMARY KEY (id)
+//     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci";
 
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    dbDelta($sql);
-}
+//     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+//     dbDelta($sql);
+// }
 
-function mon_plugin_desactivation() {
-    global $wpdb; 
+// function mon_plugin_desactivation() {
+//     global $wpdb; 
 
-    $table_name = $wpdb->prefix . 'test'; 
+//     $table_name = $wpdb->prefix . 'clubs'; 
 
-    $wpdb->query("DROP TABLE IF EXISTS $table_name");
-}
+//     $wpdb->query("DROP TABLE IF EXISTS $table_name");
+// }
